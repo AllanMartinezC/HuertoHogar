@@ -43,7 +43,7 @@ import com.google.accompanist.navigation.animation.composable
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import kotlinx.coroutines.launch
 
-// 🔹 Rutas de la app
+//  Rutas de la app
 sealed class AppScreens(val route: String) {
     object Inicio : AppScreens("inicio")
     object Login : AppScreens("login")
@@ -53,14 +53,14 @@ sealed class AppScreens(val route: String) {
     object Carrito : AppScreens("carrito")
 }
 
-// 🔹 Items para la barra inferior (global)
+// Items para la barra inferior (global)
 val bottomNavItems = listOf(
     BottomNavItem("Catálogo", Icons.Filled.Home, AppScreens.Catalogo.route),
     BottomNavItem("Perfil", Icons.Filled.Person, AppScreens.Perfil.route),
     BottomNavItem("Carrito", Icons.Filled.ShoppingCart, AppScreens.Carrito.route)
 )
 
-// 🔹 Pantallas que muestran TopBar/BottomBar
+//  Pantallas que muestran TopBar/BottomBar
 val bottomNavScreens = listOf(
     AppScreens.Catalogo.route,
     AppScreens.Perfil.route,
