@@ -85,7 +85,6 @@ fun AppNavigation() {
     val navBackStackEntry by navController.currentBackStackEntryAsState()
     val currentRoute = navBackStackEntry?.destination?.route
 
-    // ✅ Autocierra el drawer si cambia la ruta
     LaunchedEffect(currentRoute) {
         if (drawerState.isOpen) drawerState.close()
     }
@@ -101,7 +100,6 @@ fun AppNavigation() {
                 )
                 Divider()
 
-                // ✅ Cerrar drawer y luego navegar (con estado/restauración)
                 DrawerItem("Catálogo") {
                     scope.launch { drawerState.close() }
                     navController.navigate(AppScreens.Catalogo.route) {
