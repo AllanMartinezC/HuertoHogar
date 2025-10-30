@@ -12,7 +12,7 @@ data class BottomNavItem(val titulo: String, val icon: ImageVector, val screenRo
 
 @Composable
 fun BottomBar(navController: NavController, items: List<BottomNavItem>) {
-    // Lee la ruta actual desde el back stack
+
     val navBackStackEntry by navController.currentBackStackEntryAsState()
     val currentRoute = navBackStackEntry?.destination?.route
 
@@ -26,11 +26,9 @@ fun BottomBar(navController: NavController, items: List<BottomNavItem>) {
                 onClick = {
                     if (!selected) {
                         navController.navigate(item.screenRoute) {
-                            // Pop hasta el start destination (manteniendo estado)
                             popUpTo(navController.graph.findStartDestination().id) {
                                 saveState = true
                             }
-                            // Evita duplicados en el back stack
                             launchSingleTop = true
                             // Restaura estado si existía
                             restoreState = true
