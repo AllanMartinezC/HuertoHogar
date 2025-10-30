@@ -37,7 +37,7 @@ class PerfilViewModel(
     fun guardarFotoEnApp(context: Context, contentUri: Uri) {
         viewModelScope.launch(Dispatchers.IO) {
             try {
-                // 1️⃣ Copiar imagen al almacenamiento interno
+                //Copiar imagen al almacenamiento interno
                 val fileName = "perfil_${usuarioInicial.id}.jpg"
                 val outFile = File(context.filesDir, fileName)
 
@@ -45,10 +45,10 @@ class PerfilViewModel(
                     outFile.outputStream().use { output -> input.copyTo(output) }
                 }
 
-                // 2️⃣ Guardar la ruta en la BD
+                // Guardar la ruta en la BD
                 db.usuarioDao().actualizarFoto(usuarioInicial.id, outFile.absolutePath)
 
-                // 3️⃣ Actualizar estado UI en el hilo principal
+                // Actualizar estado UI en el hilo principal
                 withContext(Dispatchers.Main) {
                     fotoPath.value = outFile.absolutePath
                 }
