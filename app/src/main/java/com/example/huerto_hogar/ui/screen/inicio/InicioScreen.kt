@@ -31,7 +31,7 @@ fun InicioScreen(navController: NavController) {
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center
         ) {
-            // 🔸 Logo
+            //  Logo
             Image(
                 painter = painterResource(id = R.drawable.huerto_logo),
                 contentDescription = "Logo Huerto Hogar",
@@ -40,7 +40,7 @@ fun InicioScreen(navController: NavController) {
 
             Spacer(modifier = Modifier.height(24.dp))
 
-            // 🔸 Título
+            //  Título
             Text(
                 text = "Huerto Hogar",
                 style = MaterialTheme.typography.headlineMedium.copy(
@@ -51,7 +51,7 @@ fun InicioScreen(navController: NavController) {
 
             Spacer(modifier = Modifier.height(16.dp))
 
-            // 🔸 Slogan
+            //  Slogan
             Text(
                 text = "Frutas frescas directo a tu mesa 🍎",
                 style = MaterialTheme.typography.bodyMedium
@@ -59,7 +59,7 @@ fun InicioScreen(navController: NavController) {
 
             Spacer(modifier = Modifier.height(48.dp))
 
-            // 🔸 Botón
+            //  Botón
             Button(onClick = {
                 navController.navigate(AppScreens.Login.route)
             }) {
