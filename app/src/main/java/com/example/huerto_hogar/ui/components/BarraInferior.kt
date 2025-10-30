@@ -30,7 +30,6 @@ fun BottomBar(navController: NavController, items: List<BottomNavItem>) {
                                 saveState = true
                             }
                             launchSingleTop = true
-                            // Restaura estado si existía
                             restoreState = true
                         }
                     }
